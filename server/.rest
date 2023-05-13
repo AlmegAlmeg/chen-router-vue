@@ -1,0 +1,8 @@
+###
+GET http://localhost:2929/posts
+
+###
+GET http://localhost:2929/post/101
+
+###
+GET http://localhost:2929/postsByIds/1&9&45&79&97&7
