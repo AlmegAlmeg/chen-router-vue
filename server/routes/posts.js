@@ -13,6 +13,15 @@ router.get('/posts', async (req, res) => {
     if (!response.ok) throw 'Bad gateway';
 
     const data = await response.json();
+    data.forEach((post, i) => {
+      post.isNew = i % 5 === 0;
+      post.price = Math.floor(Math.random() * 100) + 10;
+
+      post.salePrice = i % 7 === 0 ? post.price * 0.9 : null;
+      if (post.salePrice !== null) {
+        post.salePrice = Math.round(post.salePrice);
+      }
+    });
     res.status(200).json({ posts: data });
   } catch (error) {
     console.error(error);

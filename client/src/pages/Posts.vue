@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-center text-2xl underline">Our Posts</h1>
-    <div class="grid grid-cols-3 gap-8 mt-8">
+    <div class="grid grid-cols-3 gap-12 mt-12">
       <MiniPost v-for="post in posts" :key="post.id" :post="post" />
     </div>
   </div>
